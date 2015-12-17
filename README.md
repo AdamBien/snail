@@ -9,11 +9,11 @@ Java 8 / Java EE 7 with JAX-RS endpoints
 ## Installation
 
 ````xml
- &lt;dependency&gt;
-	 &lt;groupId&gt;com.airhacks&lt;/groupId&gt;
-	 &lt;artifactId&gt;snail&lt;/artifactId&gt;
-	 &lt;version&gt;[RECENT_VERSION]&lt;/version&gt;
- &lt;/dependency&gt;
+ <dependency>
+	 <groupId>com.airhacks</groupId>
+	 <artifactId>snail</artifactId>
+	 <version>[RECENT_VERSION]</version>
+ </dependency>
 ```
 
 ## Configuration
