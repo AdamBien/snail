@@ -6,6 +6,7 @@ import javax.ws.rs.core.Response;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
+import org.junit.Rule;
 import org.junit.Test;
 
 /**
@@ -14,6 +15,7 @@ import org.junit.Test;
  */
 public class SnailsResourceIT {
 
+    @Rule
     JAXRSClientProvider provider = JAXRSClientProvider.buildWithURI("http://localhost:8080/snail-sample/resources/snails");
 
     @Test
