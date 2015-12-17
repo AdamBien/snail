@@ -6,3 +6,7 @@ pom.xml.next
 release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
+/snail-rs/nbproject/release.sh
+snapshot.sh
+release.sh
+nbproject
