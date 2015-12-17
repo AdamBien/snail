@@ -42,14 +42,19 @@ public class DelayProvider implements WriterInterceptor {
         MultivaluedMap<String, Object> headers = context.getHeaders();
         if (delay > 0) {
             try {
-                headers.add(DELAY_KEY, delay);
                 Thread.sleep(delay);
             } catch (InterruptedException ex) {
                 throw new IllegalStateException(ex);
             }
         }
-
-        context.proceed();
+        long start = System.currentTimeMillis();
+        try {
+            context.proceed();
+        } finally {
+            long duration = (System.currentTimeMillis() - start);
+            headers.add("snail-request-duration", duration);
+        }
+        headers.add(DELAY_KEY, delay);
     }
 
     public static long convert(String value) {
