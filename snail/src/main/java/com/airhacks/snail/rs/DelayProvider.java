@@ -30,11 +30,12 @@ import javax.ws.rs.ext.WriterInterceptorContext;
 public class DelayProvider implements WriterInterceptor {
 
     private long delay;
-    static final String DELAY_KEY = "snail-slowdown-in-ms";
+    public static final String DELAY_HEADER_NAME = "snail-slowdown-in-ms";
 
     public DelayProvider() {
-        String slowdown = System.getProperty(DELAY_KEY, "0");
+        String slowdown = System.getProperty(DELAY_HEADER_NAME, "0");
         this.delay = convert(slowdown);
+        System.out.println("snail: DelayProvider initialized with: " + this.delay + " ms.");
     }
 
     @Override
@@ -54,7 +55,7 @@ public class DelayProvider implements WriterInterceptor {
             long duration = (System.currentTimeMillis() - start);
             headers.add("snail-request-duration", duration);
         }
-        headers.add(DELAY_KEY, delay);
+        headers.add(DELAY_HEADER_NAME, delay);
     }
 
     public static long convert(String value) {
