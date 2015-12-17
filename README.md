@@ -1,2 +1,29 @@
 # snail
-Java EE Is Too Fast For Testing--Snail Helps You With That
+Java EE Is Too Fast For Stress Testing--Snail Helps You With That.
+Snail delays all responses with a dynamically configurable amount of time.
+
+## Requirements
+
+Java 8 / Java EE 7 with JAX-RS endpoints
+
+## Installation
+
+````xml
+ &lt;dependency&gt;
+	 &lt;groupId&gt;com.airhacks&lt;/groupId&gt;
+	 &lt;artifactId&gt;snail&lt;/artifactId&gt;
+	 &lt;version&gt;[RECENT_VERSION]&lt;/version&gt;
+ &lt;/dependency&gt;
+```
+
+## Configuration
+
+1. Set property with: snail-slowdown-in-ms=[DELAY IN MS].
+2. Override the system property with an equally-named header.
+
+## Verification
+
+Snail attaches the currently configured delay to each request.
+
+
+
